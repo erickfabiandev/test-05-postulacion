@@ -1,0 +1,16 @@
+@use '../styles/reset.module';
+@use '../styles/variables.module';
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 1440px;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, variables.$color-darkviolet, variables.$color-ligthviolet);
+}
