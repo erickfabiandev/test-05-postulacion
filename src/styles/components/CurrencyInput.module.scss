@@ -1,0 +1,59 @@
+@use '../variables.module';
+
+.currency_input {
+  width: 100%;
+  height: 45px;
+  border: 1px solid variables.$color-ligthviolet;
+  border-radius: 6px;
+  display: flex;
+
+  fieldset {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0.5rem;
+
+    legend {
+      font-weight: 400;
+      font-size: 12px;
+      text-align: right;
+      color: variables.$color-ligthpurple;
+    }
+
+    .amount_input {
+      display: flex;
+      align-items: center;
+      color: variables.$color-purple;
+      font-size: 16px;
+      font-weight: 400;
+
+      &__number_input {
+        outline: none;
+        min-width: 40px;
+        padding-inline: 0;
+        padding-block: 0;
+        padding-left: 0.1rem;
+      }
+
+      &__number_input::-webkit-inner-spin-button,
+      &__number_input::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+
+  label {
+    width: 30%;
+    background-color: variables.$color-gray;
+    border-radius: 6px 0 0 6px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: variables.$color-ligthviolet;
+  }
+}

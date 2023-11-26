@@ -1,0 +1,50 @@
+@use '../variables.module';
+
+.currency_container {
+  width: 100%;
+  max-height: 395px;
+  background: variables.$color-white;
+  border-bottom: 1px solid variables.$color-white-3;
+
+  &__tabs {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-top: 1.5rem;
+    border-bottom: 1px solid variables.$color-white-3;
+
+    .active {
+      color: variables.$color-blue-hover;
+      border-bottom: 1px solid variables.$color-blue-hover;
+    }
+
+    &__title {
+      text-align: center;
+      font-weight: 400;
+      font-size: 12px;
+      color: variables.$color-ligthpurple;
+      padding-bottom: 0.25rem;
+      flex: 1;
+
+      p {
+        display: inline-block;
+
+        span {
+          display: block;
+        }
+
+        span:nth-child(2) {
+          font-weight: 500;
+        }
+      }
+
+    }
+  }
+}
+
+@media (min-width:1024px) {
+  .currency_container {
+    width: 386px;
+    border-radius: 8px;
+  }
+}

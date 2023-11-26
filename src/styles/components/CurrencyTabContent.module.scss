@@ -1,0 +1,49 @@
+@use '../variables.module';
+
+.currency_tab_content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 3rem;
+  gap: 1.5rem;
+  position: relative;
+
+  .toggle {
+    background-color: variables.$color-ligthviolet;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease-in-out;
+    transform: rotate(0deg);
+    position: absolute;
+    top: 66px;
+
+    .icon {
+      color: variables.$color-white;
+    }
+  }
+
+  .animation_rotate {
+    transform: rotate(360deg);
+  }
+
+  .start {
+    border: 1px solid variables.$color-darkviolet;
+    background-color: variables.$color-ligthviolet;
+    color: variables.$color-white;
+    font-weight: 400;
+    font-size: 16px;
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 6px;
+    margin-top: 2rem;
+  }
+}
