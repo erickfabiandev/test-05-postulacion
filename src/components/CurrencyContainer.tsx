@@ -1,12 +1,12 @@
 'use client'
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import Styles from '@/styles/components/CurrencyContainer.module.scss'
 import CurrencyTabContent from './CurrencyTabContent';
 import { useAppDispatch, useAppSelector } from '@/redux/hook'
 import { updateCurrencyType } from '@/redux/features/currencySlice';
 
 const CurrencyContainer: FC = () => {
-  const priceRate = ['Dólar compra', 'Dólar Venta']
+  const priceRate = ['Dólar compra', 'Dólar venta']
   const currencyType = useAppSelector(state => state.currencyReducer.currencyType)
   const dataExchange = useAppSelector(state => state.firebaseReducer)
   const disptach = useAppDispatch()

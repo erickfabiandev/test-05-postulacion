@@ -51,7 +51,9 @@ const CurrencyTabContent: FC = () => {
       />
       <button
         type='button'
-        className={`${style.toggle} ${currencyType === 1 ? style.animation_rotate : style}`}
+        id='toggle'
+        data-testid='toggle'
+        className={`${style.toggle} ${currencyType === 1 ? style.animation_rotate : ''}`}
         onClick={handleToggleClick}
       >
         <RxUpdate className={style.icon} size={25} />
