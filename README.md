@@ -42,13 +42,16 @@ Before getting started with development for the project, you must first make sur
 ```bash
   cd test-05-postulacion
 ```
-
-**3. Install the project's dependencies**
+**3. Configure the env running**
+```bash
+  cp .env.example .env.local
+```
+**4. Install the project's dependencies**
 ```bash
   npm install
 ```
 
-**4. Start the development server in your browser of preference**
+**5. Start the development server in your browser of preference**
 ```bash
   npm run dev
 ```
