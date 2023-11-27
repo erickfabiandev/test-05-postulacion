@@ -42,6 +42,12 @@
   }
 }
 
+@media (min-width:768px) {
+  .currency_container {
+    width: 60%
+  }
+}
+
 @media (min-width:1024px) {
   .currency_container {
     width: 386px;
