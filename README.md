@@ -57,7 +57,8 @@ Before getting started with development for the project, you must first make sur
 ```
 
 ## Demo
-Proporciona un enlace a una demostración en línea de tu aplicación si está disponible.
+To access the deployed application click on the link provided.
+[Deployment Link](https://test-05-postulacion.vercel.app/)
 
 ## Features
 - Real-time currency conversion
