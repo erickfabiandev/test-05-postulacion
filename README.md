@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CONVERTIR DE MONEDAS_TEST 05
 
-## Getting Started
+A web application to convert from dollars to soles and vice versa, with exchange rates updated from Firebase.
 
-First, run the development server:
+## Table of Contents
+- [Tech](#tech)
+- [Pre-Requisites](#pre-requisites)
+- [Installation](#installation)
+- [Demo](#demo)
+- [Features](#features)
+- [Usage](#usage)
+- [Screenshots](#screenshots)
+- [Running Tests](#tests)
+- [Support](#support)
+- [Author](#author)
 
+## Tech
+- Next.js
+- React
+- Redux Toolkit
+- Jest (for testing)
+- Sass
+- Firebase
+- TypeScript
+
+
+## Pre-Requisites
+Before getting started with development for the project, you must first make sure you have installed the following:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/)
+- Any IDE of your preference
+
+## Installation
+**1. Clone the repository to your local machine**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone git@github.com:erickfabiandev/test-05-postulacion.git
+```
+    
+**2. Navigate to the project's directory**
+```bash
+  cd test-05-postulacion
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**3. Install the project's dependencies**
+```bash
+  npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**4. Start the development server in your browser of preference**
+```bash
+  npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Demo
+Proporciona un enlace a una demostración en línea de tu aplicación si está disponible.
 
-## Learn More
+## Features
+- Real-time currency conversion
+- Dynamic change of conversion rates
+- Automatic update of the result when entering a value
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
+1. Open the application in your browser.
+2. Enter the amount you want to convert in the first input (Send).
+3. To change the currency of origin click on the circular toggle (default dollars).
+4. See the result updated in real time in the second input.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Screenshots
+**desktop view**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**mobile view**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Test
+
+This project has been configured with unit tests in JEST. To access the test environment, use the following command in your console:
+
+```bash
+  npm run test
+```
+
+## Support
+
+For support, email erickfabianct@gmail.com or join our Slack channel.
+
+## Author
+
+- [Erick Carrasco](https://github.com/erickfabiandev)
+

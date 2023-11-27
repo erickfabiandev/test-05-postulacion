@@ -1,4 +1,3 @@
-import { ExchangeRate } from "@/types/ExchangeRate.type";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore

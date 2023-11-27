@@ -1,4 +1,4 @@
-import { CurrencyState } from "@/types/Currency.type";
+import { ActionCurrencyWithoutFrom, CurrencyState, CurrencyType, ActionCurrencyWithoutType, CurrencyProps } from "@/types/Currency.type";
 import { ExchangeRate } from "@/types/ExchangeRate.type";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -13,7 +13,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 
 const initialState: CurrencyState = {
-  currencyType: 0,
+  currencyType: CurrencyType.USD_TO_PEN,
   currencyFrom: '',
   currencyTo: '',
 };
@@ -22,19 +22,30 @@ const currencySlice = createSlice({
   name: 'currency',
   initialState,
   reducers: {
-    updateCurrencyFrom: (state, action: PayloadAction<{ newCurrencyFrom: string, dataExchange: ExchangeRate }>) => {
-      state.currencyFrom = action.payload.newCurrencyFrom
-      state.currencyTo = calculateConversion(action.payload.newCurrencyFrom, state.currencyType, action.payload.dataExchange)
+    updateCurrencyFrom: (state: CurrencyState, action: PayloadAction<ActionCurrencyWithoutType>) => {
+      state.currencyFrom = action.payload.currencyFrom
+      const calculateProps: CurrencyProps = {
+        currencyType: state.currencyType,
+        currencyFrom: action.payload.currencyFrom,
+        dataExchange: action.payload.dataExchange
+      }
+      state.currencyTo = calculateConversion(calculateProps)
     },
-    updateCurrencyType: (state, action: PayloadAction<{ newCurrencyType: number, dataExchange: ExchangeRate }>) => {
-      state.currencyType = action.payload.newCurrencyType
-      state.currencyTo = calculateConversion(state.currencyFrom, action.payload.newCurrencyType, action.payload.dataExchange)
+    updateCurrencyType: (state: CurrencyState, action: PayloadAction<ActionCurrencyWithoutFrom>) => {
+      state.currencyType = action.payload.currencyType
+      const calculateProps: CurrencyProps = {
+        currencyType: action.payload.currencyType,
+        currencyFrom: state.currencyFrom,
+        dataExchange: action.payload.dataExchange
+      }
+      state.currencyTo = calculateConversion(calculateProps)
     }
   }
 })
 
-const calculateConversion = (currencyFrom: string, currencyType: number, dataExchange: ExchangeRate): string => {
-  const newCurrencyTo = currencyType === 0 ?
+const calculateConversion = (calculateProps: CurrencyProps): string => {
+  const { currencyFrom, currencyType, dataExchange } = calculateProps
+  const newCurrencyTo = currencyType === CurrencyType.USD_TO_PEN ?
     (
       parseFloat(currencyFrom) * parseFloat(dataExchange.purchase_price)
     ) : (

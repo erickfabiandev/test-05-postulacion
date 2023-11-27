@@ -7,11 +7,11 @@ import { fetchFirebaseData } from '@/firebase/firebaseService'
 
 export default function Home() {
 
-  const disptach = useAppDispatch()
+  const dispatch = useAppDispatch()
 
   useEffect(() => {
-    fetchFirebaseData(disptach)
-  }, [disptach])
+    fetchFirebaseData(dispatch)
+  }, [dispatch])
 
   return (
     <main className={styles.main}>

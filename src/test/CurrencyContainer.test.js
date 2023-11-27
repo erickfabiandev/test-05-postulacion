@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import CurrencyContainer from "@/components/CurrencyContainer";
 import { fireEvent, render, screen } from "@testing-library/react";
 import React from 'react';
+import { CurrencyType } from "@/types/Currency.type";
 
 describe('CurrencyContainer', () => {
   let store
@@ -12,7 +13,7 @@ describe('CurrencyContainer', () => {
     //Arrange
     const initialState = {
       currencyReducer: {
-        currencyType: 0,
+        currencyType: CurrencyType.USD_TO_PEN,
         currencyFrom: '',
         currencyTo: ''
       },
@@ -53,6 +54,6 @@ describe('CurrencyContainer', () => {
     //Assert
     const actions = store.getActions();
     expect(actions[0].type).toEqual('currency/updateCurrencyType');
-    expect(actions[0].payload.newCurrencyType).toEqual(1);
+    expect(actions[0].payload.currencyType).toEqual(CurrencyType.PEN_TO_USD);
   });
 });

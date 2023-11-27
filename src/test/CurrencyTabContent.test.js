@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { describe } from 'node:test';
 import configureStore from 'redux-mock-store';
 import CurrencyTabContent from "@/components/CurrencyTabContent";
-import Providers from '@/redux/Providers'
+import { CurrencyType } from "@/types/Currency.type";
 import { Provider } from 'react-redux';
 
 describe('CurrencyTabContent', () => {
@@ -11,7 +11,7 @@ describe('CurrencyTabContent', () => {
     //Arrange
     const initialState = {
       currencyReducer: {
-        currencyType: 0,
+        currencyType: CurrencyType.USD_TO_PEN,
         currencyFrom: '',
         currencyTo: ''
       },
@@ -34,6 +34,6 @@ describe('CurrencyTabContent', () => {
 
     const actions = store.getActions();
     expect(actions[0].type).toEqual('currency/updateCurrencyType');
-    expect(actions[0].payload.newCurrencyType).toEqual(1);
+    expect(actions[0].payload.currencyType).toEqual(CurrencyType.PEN_TO_USD);
   })
 })

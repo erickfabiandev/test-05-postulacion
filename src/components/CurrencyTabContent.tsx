@@ -5,6 +5,7 @@ import { RxUpdate } from "react-icons/rx";
 import { useAppDispatch, useAppSelector } from '@/redux/hook'
 import { updateCurrencyFrom, updateCurrencyType } from '@/redux/features/currencySlice'
 import CurrencyInput from './CurrencyInput';
+import { CurrencyType } from '@/types/Currency.type';
 
 
 const CurrencyTabContent: FC = () => {
@@ -17,7 +18,7 @@ const CurrencyTabContent: FC = () => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     const target = event.target;
     const newCurrencyFrom = target.value;
-    dispacth(updateCurrencyFrom({ newCurrencyFrom, dataExchange }))
+    dispacth(updateCurrencyFrom({ currencyFrom: newCurrencyFrom, dataExchange }))
   }
 
   const hanldeKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
@@ -27,14 +28,14 @@ const CurrencyTabContent: FC = () => {
   };
 
   const handleToggleClick = () => {
-    const newCurrencyType = currencyType === 0 ? 1 : 0
-    dispacth(updateCurrencyType({ newCurrencyType, dataExchange }))
+    const newCurrencyType = currencyType === CurrencyType.USD_TO_PEN ? CurrencyType.PEN_TO_USD : CurrencyType.USD_TO_PEN
+    dispacth(updateCurrencyType({ currencyType: newCurrencyType, dataExchange }))
   }
 
-  const sendLabel = currencyType === 0 ? 'Dólares' : 'Soles';
-  const sendSymbol = currencyType === 0 ? '$' : 'S/';
-  const receiveLabel = currencyType === 0 ? 'Soles' : 'Dólares';
-  const receiveSymbol = currencyType === 0 ? 'S/' : '$';
+  const sendLabel = currencyType === CurrencyType.USD_TO_PEN ? 'Dólares' : 'Soles';
+  const sendSymbol = currencyType === CurrencyType.USD_TO_PEN ? '$' : 'S/';
+  const receiveLabel = currencyType === CurrencyType.USD_TO_PEN ? 'Soles' : 'Dólares';
+  const receiveSymbol = currencyType === CurrencyType.USD_TO_PEN ? 'S/' : '$';
 
   return (
     <div className={style.currency_tab_content}>
@@ -53,7 +54,7 @@ const CurrencyTabContent: FC = () => {
         type='button'
         id='toggle'
         data-testid='toggle'
-        className={`${style.toggle} ${currencyType === 1 ? style.animation_rotate : ''}`}
+        className={`${style.toggle} ${currencyType === CurrencyType.PEN_TO_USD ? style.animation_rotate : ''}`}
         onClick={handleToggleClick}
       >
         <RxUpdate className={style.icon} size={25} />
