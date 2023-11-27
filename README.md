@@ -72,11 +72,12 @@ Proporciona un enlace a una demostración en línea de tu aplicación si está d
 
 ## Screenshots
 **desktop view**
-
+![image](https://github.com/erickfabiandev/test-05-postulacion/assets/109047392/ce1d5139-a992-424f-b82b-e3907460fa34)
 
 
 **mobile view**
 
+![image](https://github.com/erickfabiandev/test-05-postulacion/assets/109047392/ac7d705a-e723-4ec4-a8ae-b8d1e53cd52c)
 
 ## Test
 
